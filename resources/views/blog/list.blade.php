@@ -12,19 +12,14 @@
         <th></th>
       </tr>
 
+      @foreach($blogs as $blog)
       <tr>
-        <td>1</td>
-        <td>2023/09/07</td>
-        <td>テスト</td>
-        <td></td>
+        <td>{{ $blog->id }}</td>
+        <td>{{ $blog->updated_at }}</td>
+        <td>{{ $blog->title }}</td>
+        <td>{{ $blog->content }}</td>
       </tr>
-
-      <tr>
-        <td>2</td>
-        <td>2023/09/07</td>
-        <td>テスト2</td>
-        <td></td>
-      </tr>
+      @endforeach
     </table>
   </div>
 </div>
