@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,5 +23,11 @@ class DatabaseSeeder extends Seeder
         // ]);
         // $this->call
         // (BlogsTableSeeder::class);
+        DB::table('blogs')->insert(
+            [
+                'title'=>Str::random(10),
+                'content'=>Str::random(10)
+            ]
+        );
     }
 }
