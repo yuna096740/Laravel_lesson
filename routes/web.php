@@ -16,3 +16,5 @@ use App\Http\Controllers\BlogController;
 
 Route::get('/', [BlogController::class, 'showList'])->name
 ('blogs');
+
+Route::resource('blogs', BlogController::class)->only(['create', 'store']);
