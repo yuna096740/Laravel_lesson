@@ -12,10 +12,10 @@ class BlogController extends Controller
      * 
      * @return view
      */
-    public function showList()
+    public function index()
     {
         $blogs = Blog::all();
-        return view('blog.list', 
+        return view('blog.index', 
         ['blogs' => $blogs]);
     }
 
@@ -30,6 +30,34 @@ class BlogController extends Controller
         $blog->title = $request->title;
         $blog->content = $request->content;
         $blog->save();
+        return redirect('/');
+    }
+
+    public function show($id)
+    {
+        $blog = Blog::find($id);
+        return view('Blog.show', ['blog' => $blog]);
+    }
+
+    public function edit($id)
+    {
+        $blog = Blog::find($id);
+        return view('blog.edit', ['blog' => $blog]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $blog = Blog::find($id);
+        $blog->title = $request->title;
+        $blog->content = $request->content;
+        $blog->save();
+        return redirect('blogs/'.$id);
+    }
+
+    public function destroy($id)
+    {
+        $blog = Blog::find($id);
+        $blog->delete();
         return redirect('/');
     }
 
