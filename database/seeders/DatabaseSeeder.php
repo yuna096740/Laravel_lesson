@@ -21,13 +21,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        // $this->call
-        // (BlogsTableSeeder::class);
-        DB::table('blogs')->insert(
-            [
-                'title'=>Str::random(10),
-                'content'=>Str::random(10)
-            ]
-        );
+        $this->call([
+            BlogsTableSeeder::class,
+        ]);
     }
 }

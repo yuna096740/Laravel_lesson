@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Models\Blog;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use App\Models\Blog;
 
 class BlogsTableSeeder extends Seeder
 {
@@ -13,6 +16,11 @@ class BlogsTableSeeder extends Seeder
      */
     public function run(): void
     {
-        
+        for ($i = 0; $i < 10; $i++) {
+            Blog::create([
+                'title'=>Str::random(10),
+                'content'=>Str::random(10),
+            ]);
+        }
     }
 }
