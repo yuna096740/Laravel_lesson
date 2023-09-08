@@ -10,6 +10,7 @@
         <th>タイトル</th>
         <th>内容</th>
         <th></th>
+        <th></th>
       </tr>
     
       <tr>
@@ -17,11 +18,18 @@
         <td>{{$blog->updated_at}}</td>
         <td>{{$blog->title}}</td>
         <td>{{$blog->content}}</td>
+        <td>
+          <a href="/blogs/{{ $blog->id }}/edit" class="btn btn-success">編集する</a>
+        </td>
+        <td>
+          <form action="/blogs/{{$blog->id}}" method="POST">
+            @csrf
+            <input type="hidden" name="_method" value="delete">
+            <button type="submit" name="" value="Delete" class="btn btn-danger">削除する</button>
+          </form>
+        </td>
       </tr>
     </table>
-
-    <a href="/">Edit</a>
-
     <a href="/">記事一覧へ戻る</a>
   </div>
 </div>

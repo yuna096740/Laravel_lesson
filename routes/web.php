@@ -14,7 +14,7 @@ use App\Http\Controllers\BlogController;
 |
 */
 
-Route::get('/', [BlogController::class, 'showList'])->name
+Route::get('/', [BlogController::class, 'index'])->name
 ('blogs');
 
-Route::resource('blogs', BlogController::class);// ->only(['create', 'store', 'show',]);
+Route::resource('blogs', BlogController::class)->except(['index']);     // ->only(['create', 'store', 'show',]);
