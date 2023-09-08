@@ -45,6 +45,15 @@ class BlogController extends Controller
         return view('blog.edit', ['blog' => $blog]);
     }
 
+    public function update(Request $request, $id)
+    {
+        $blog = Blog::find($id);
+        $blog->title = $request->title;
+        $blog->content = $request->content;
+        $blog->save();
+        return redirect('blogs/'.$id);
+    }
+
     public function destroy($id)
     {
         $blog = Blog::find($id);

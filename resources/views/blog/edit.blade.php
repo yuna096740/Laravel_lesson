@@ -6,9 +6,9 @@
     <form action="/blogs/{{ $blog->id }}" method="POST">
       @csrf
       @method('PUT')
-
-      {{$blog->id}}
-      {{$blog->updated_at}}
+      
+      <p>{{$blog->id}}</p>
+      <p>{{$blog->updated_at}}</p>
       
       <label for="title">タイトル</label>
       <input name="title" value="{{ $blog->title }}">
