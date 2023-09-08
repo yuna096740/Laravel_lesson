@@ -33,4 +33,17 @@ class BlogController extends Controller
         return redirect('/');
     }
 
+    public function show($id)
+    {
+        $blog = Blog::find($id);
+        return view('Blog.show', ['blog' => $blog]);
+    }
+
+    public function destroy($id)
+    {
+        $blog = Blog::find($id);
+        $blog->delete();
+        return redirect('/');
+    }
+
 }

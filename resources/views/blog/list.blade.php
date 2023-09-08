@@ -9,6 +9,7 @@
         <th>記事番号</th>
         <th>日付</th>
         <th>タイトル</th>
+        <th>内容</th>
         <th></th>
       </tr>
 
@@ -18,6 +19,7 @@
         <td>{{ $blog->updated_at }}</td>
         <td>{{ $blog->title }}</td>
         <td>{{ $blog->content }}</td>
+        <td><a href="/blogs/{{ $blog->id }}">Details</a></td>
       </tr>
       @endforeach
     </table>
