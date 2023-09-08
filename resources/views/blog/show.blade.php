@@ -1,8 +1,11 @@
 @extends('layouts/layout')
+@section('title', 'ブログ詳細')
+
 
 @section('content')
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-8 col-md-offset-2 mx-auto mt-5">
+    <h4>ブログ詳細</h4>
     <table class="table">
       <tr>
         <th>記事番号</th>
